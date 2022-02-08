@@ -1,3 +1,10 @@
 # Belly Button Biodiversity
 
-In this module, students will build a dynamic dashboard using JavaScript, as well as Plotly and D3 libraries. They will deploy the dashboard to GitHub Pages.
+## Overview
+
+For this project, we had to create an interactive dashboard using JavaScript, and then try to deploy the same one to Github Pages: [Github Pages](https://davescudero.github.io/plotly_deploy/)
+
+## Results
+
+![webpage.png](https://github.com/davescudero/plotly_deploy/blob/main/webpage.png)
+
