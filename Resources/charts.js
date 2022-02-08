@@ -109,3 +109,59 @@ function buildCharts(sample) {
      
     //10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barData, barLayout);
+
+  // Bubble charts
+    // 1. Create the trace for the bubble chart.
+    let bubbleData = [{
+      x: otuIds,
+      y: sampleValues,
+      mode:'markers',
+      text: otuLabels,
+      marker:{
+        size: sampleValues,
+        color:otuIds
+      }
+
+    }];
+
+    // 2. Create the layout for the bubble chart.
+    let bubbleLayout = {
+      title: "Bacteria Cultures Per Sample",
+      xaxis: {title: "OTU ID"},
+      showlegend: false,
+      width: 1185
+    };
+
+    // 3. Use Plotly to plot the data with the layout.
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+  
+    //Gauge chart
+    // 4. Create the trace for the gauge chart.
+    let gaugeData=[{
+      value:washFreq,
+      title:{text: "Belly Button Washing Frequency<br>Scrubs per Week"},
+      type: "indicator",
+      mode: "gauge+number",
+      gauge:{
+        axis: {range:[null,10]},
+        steps: [
+          {range: [0,2], color:"ea2c2c"},
+          {range: [2,4], color:"#ea822c"},
+          {range: [4,6], color:"#ee9c00"},
+          {range: [6,8], color:"#eecc00"},
+          {range: [8,10], color:"#d4ee00"}
+        ]
+      }
+    }];
+
+    // 5. Create the layout for the gauge chart.
+    var gaugeLayout = {
+      width: 485, height: 450, margin: {t: 0, b: 0}
+    };
+
+    // 6. Use Plotly to plot the gauge data and layout.
+    //Plotly.newPlot();
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
+
+  });
+}
